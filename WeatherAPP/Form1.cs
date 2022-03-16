@@ -58,10 +58,14 @@ namespace WeatherAPP
             string API_KEY = "25cbe3a84ded6fe6ba107e9ed503ed6d";
             string BASE_URL = "http://api.openweathermap.org/data/2.5/weather";
             string MAIN_URL = $"{BASE_URL}?zip={address}&units=imperial&lang=en&appid={API_KEY}";
+            string ZIPPO_BASE = "http://api.zippopotam.us/us/";
+            string ZIPPO_URL = $"{ZIPPO_BASE}{address}";
 
             var request = new RestRequest(MAIN_URL);
             var client = new RestClient(MAIN_URL);
-            
+
+            var getStateID = new RestRequest(ZIPPO_URL);
+            var clientStateID = new RestClient(ZIPPO_URL);
 
             // If the field is blank and bad request is sent back.
             if (textBox1.Text == "")
@@ -72,7 +76,10 @@ namespace WeatherAPP
             // Error checking to see if zipcode is valid 
             else
             {
+                
                 var response = await client.GetAsync(request);
+                var stateResponse = await clientStateID.GetAsync(getStateID);
+
                 if (response.Content.Contains("\"cod\":\"404\""))
                 {
                     MessageBox.Show("You've entered an incorrect zipcode!", "Error!");
@@ -84,14 +91,17 @@ namespace WeatherAPP
                 else
                 {
                     Weather.root inf = JsonConvert.DeserializeObject<Weather.root>(response.Content.ToString());
+                    StateCode.root statecd = JsonConvert.DeserializeObject<StateCode.root>(stateResponse.Content.ToString());
+                    
                     //  Weather tst = JsonConvert.DeserializeObject<Weather.root>(response.Content.ToString());
                     //MessageBox.Show(response.Content);
                     int FeelsLikeConversion = (int)inf.main.temp;
                     feelsBox.Text = string.Format("{0}\u00B0F", FeelsLikeConversion.ToString());         
-                    T_cityBox.Text = inf.name.ToUpper().ToString();
+                    T_cityBox.Text = inf.name.ToUpper().ToString() +", " + statecd.places[0].stateabrv.ToString();
                     foreCast.Text = inf.Weather[0].description[0].ToString().ToUpper() + inf.Weather[0].description.Substring(1);
                     T_HUMIDITY.Text = inf.main.humidity.ToString() + "%";
-                   
+                    
+                   // MessageBox.Show(statecd.places[0].stateabrv.ToString());
 
 
 

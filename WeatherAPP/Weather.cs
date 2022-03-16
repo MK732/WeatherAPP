@@ -9,6 +9,7 @@ namespace WeatherAPP
     public class Weather
     {
        // public string? name { get; set; }
+      
 
         public class coord 
         {
@@ -52,7 +53,7 @@ namespace WeatherAPP
             public main? main { get; set; }
             public sys? sys { get; set; }
             public string? name { get; set; }
-
+           
         }
     }
 }
