@@ -28,134 +28,178 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
+            this.FetchWeather = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.L_zipcode = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.Feels_Like = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cityBox = new System.Windows.Forms.TextBox();
+            this.L_Feels_Like = new System.Windows.Forms.Label();
+            this.L_CITYNAME = new System.Windows.Forms.Label();
+            this.T_cityBox = new System.Windows.Forms.TextBox();
             this.feelsBox = new System.Windows.Forms.TextBox();
-            this.fCast = new System.Windows.Forms.Label();
+            this.L_Forecast = new System.Windows.Forms.Label();
             this.foreCast = new System.Windows.Forms.TextBox();
+            this.L_FEELSLIKE = new System.Windows.Forms.Label();
+            this.L_HUMIDITY = new System.Windows.Forms.Label();
+            this.T_HUMIDITY = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // FetchWeather
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(230, 390);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(310, 60);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Fetch Data";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_ClickAsync);
+            this.FetchWeather.BackColor = System.Drawing.Color.Gray;
+            this.FetchWeather.Image = global::WeatherAPP.Properties.Resources.GreenButton;
+            this.FetchWeather.Location = new System.Drawing.Point(230, 390);
+            this.FetchWeather.Name = "FetchWeather";
+            this.FetchWeather.Size = new System.Drawing.Size(310, 60);
+            this.FetchWeather.TabIndex = 0;
+            this.FetchWeather.Text = "Get Weather!";
+            this.FetchWeather.UseVisualStyleBackColor = false;
+            this.FetchWeather.Click += new System.EventHandler(this.FetchWeather_ClickAsync);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(424, 361);
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(380, 363);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
+            this.textBox1.Size = new System.Drawing.Size(148, 19);
             this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // label1
+            // L_zipcode
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(249, 364);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Enter Zipcode:";
+            this.L_zipcode.AutoSize = true;
+            this.L_zipcode.BackColor = System.Drawing.Color.Transparent;
+            this.L_zipcode.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.L_zipcode.Location = new System.Drawing.Point(242, 358);
+            this.L_zipcode.Name = "L_zipcode";
+            this.L_zipcode.Size = new System.Drawing.Size(120, 21);
+            this.L_zipcode.TabIndex = 2;
+            this.L_zipcode.Text = "Enter Zipcode:";
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(800, 450);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // Feels_Like
+            // L_Feels_Like
             // 
-            this.Feels_Like.AutoSize = true;
-            this.Feels_Like.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Feels_Like.Location = new System.Drawing.Point(94, 164);
-            this.Feels_Like.Name = "Feels_Like";
-            this.Feels_Like.Size = new System.Drawing.Size(90, 21);
-            this.Feels_Like.TabIndex = 4;
-            this.Feels_Like.Text = "Feels Like:";
-            this.Feels_Like.Click += new System.EventHandler(this.Feels_Like_Click);
+            this.L_Feels_Like.AutoSize = true;
+            this.L_Feels_Like.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.L_Feels_Like.Location = new System.Drawing.Point(282, 163);
+            this.L_Feels_Like.Name = "L_Feels_Like";
+            this.L_Feels_Like.Size = new System.Drawing.Size(0, 21);
+            this.L_Feels_Like.TabIndex = 4;
             // 
-            // label2
+            // L_CITYNAME
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(94, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 21);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "City:";
+            this.L_CITYNAME.AutoSize = true;
+            this.L_CITYNAME.BackColor = System.Drawing.Color.Transparent;
+            this.L_CITYNAME.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.L_CITYNAME.Location = new System.Drawing.Point(251, 85);
+            this.L_CITYNAME.Name = "L_CITYNAME";
+            this.L_CITYNAME.Size = new System.Drawing.Size(45, 21);
+            this.L_CITYNAME.TabIndex = 5;
+            this.L_CITYNAME.Text = "City:";
             // 
-            // cityBox
+            // T_cityBox
             // 
-            this.cityBox.Location = new System.Drawing.Point(207, 84);
-            this.cityBox.Name = "cityBox";
-            this.cityBox.Size = new System.Drawing.Size(100, 23);
-            this.cityBox.TabIndex = 6;
+            this.T_cityBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.T_cityBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.T_cityBox.Location = new System.Drawing.Point(380, 90);
+            this.T_cityBox.Name = "T_cityBox";
+            this.T_cityBox.Size = new System.Drawing.Size(124, 19);
+            this.T_cityBox.TabIndex = 6;
             // 
             // feelsBox
             // 
             this.feelsBox.BackColor = System.Drawing.SystemColors.Control;
-            this.feelsBox.Location = new System.Drawing.Point(207, 162);
+            this.feelsBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.feelsBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.feelsBox.Location = new System.Drawing.Point(380, 171);
             this.feelsBox.Name = "feelsBox";
-            this.feelsBox.Size = new System.Drawing.Size(100, 23);
+            this.feelsBox.Size = new System.Drawing.Size(124, 19);
             this.feelsBox.TabIndex = 7;
             // 
-            // fCast
+            // L_Forecast
             // 
-            this.fCast.AutoSize = true;
-            this.fCast.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.fCast.Location = new System.Drawing.Point(94, 128);
-            this.fCast.Name = "fCast";
-            this.fCast.Size = new System.Drawing.Size(79, 21);
-            this.fCast.TabIndex = 8;
-            this.fCast.Text = "Forecast:";
+            this.L_Forecast.AutoSize = true;
+            this.L_Forecast.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.L_Forecast.Location = new System.Drawing.Point(251, 127);
+            this.L_Forecast.Name = "L_Forecast";
+            this.L_Forecast.Size = new System.Drawing.Size(79, 21);
+            this.L_Forecast.TabIndex = 8;
+            this.L_Forecast.Text = "Forecast:";
             // 
             // foreCast
             // 
-            this.foreCast.Location = new System.Drawing.Point(207, 126);
+            this.foreCast.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.foreCast.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.foreCast.Location = new System.Drawing.Point(380, 132);
             this.foreCast.Name = "foreCast";
-            this.foreCast.Size = new System.Drawing.Size(100, 23);
+            this.foreCast.Size = new System.Drawing.Size(124, 19);
             this.foreCast.TabIndex = 9;
+            // 
+            // L_FEELSLIKE
+            // 
+            this.L_FEELSLIKE.AutoSize = true;
+            this.L_FEELSLIKE.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.L_FEELSLIKE.Location = new System.Drawing.Point(251, 166);
+            this.L_FEELSLIKE.Name = "L_FEELSLIKE";
+            this.L_FEELSLIKE.Size = new System.Drawing.Size(90, 21);
+            this.L_FEELSLIKE.TabIndex = 10;
+            this.L_FEELSLIKE.Text = "Feels Like:";
+            // 
+            // L_HUMIDITY
+            // 
+            this.L_HUMIDITY.AutoSize = true;
+            this.L_HUMIDITY.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.L_HUMIDITY.Location = new System.Drawing.Point(251, 211);
+            this.L_HUMIDITY.Name = "L_HUMIDITY";
+            this.L_HUMIDITY.Size = new System.Drawing.Size(82, 21);
+            this.L_HUMIDITY.TabIndex = 11;
+            this.L_HUMIDITY.Text = "Humidity:";
+            // 
+            // T_HUMIDITY
+            // 
+            this.T_HUMIDITY.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.T_HUMIDITY.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.T_HUMIDITY.Location = new System.Drawing.Point(380, 215);
+            this.T_HUMIDITY.Name = "T_HUMIDITY";
+            this.T_HUMIDITY.Size = new System.Drawing.Size(124, 19);
+            this.T_HUMIDITY.TabIndex = 12;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.T_HUMIDITY);
+            this.Controls.Add(this.L_HUMIDITY);
+            this.Controls.Add(this.L_FEELSLIKE);
             this.Controls.Add(this.foreCast);
-            this.Controls.Add(this.fCast);
+            this.Controls.Add(this.L_Forecast);
             this.Controls.Add(this.feelsBox);
-            this.Controls.Add(this.cityBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.Feels_Like);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.T_cityBox);
+            this.Controls.Add(this.L_CITYNAME);
+            this.Controls.Add(this.L_Feels_Like);
+            this.Controls.Add(this.L_zipcode);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.FetchWeather);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "The Best Weather Applicaton";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -165,16 +209,18 @@
 
         #endregion
 
-        private Button button1;
+        private Button FetchWeather;
         private TextBox textBox1;
-        private Label label1;
+        private Label L_zipcode;
         private PictureBox pictureBox1;
-        private ToolTip toolTip1;
-        private Label Feels_Like;
-        private Label label2;
-        private TextBox cityBox;
+        private Label L_Feels_Like;
+        private Label L_CITYNAME;
+        private TextBox T_cityBox;
         private TextBox feelsBox;
-        private Label fCast;
+        private Label L_Forecast;
         private TextBox foreCast;
+        private Label L_FEELSLIKE;
+        private Label L_HUMIDITY;
+        private TextBox T_HUMIDITY;
     }
 }

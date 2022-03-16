@@ -51,7 +51,7 @@ namespace WeatherAPP
             public List <weather>? Weather { get; set; }
             public main? main { get; set; }
             public sys? sys { get; set; }
-            public string name { get; set; }
+            public string? name { get; set; }
 
         }
     }

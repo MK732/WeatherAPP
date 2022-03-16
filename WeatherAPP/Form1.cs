@@ -7,30 +7,45 @@ namespace WeatherAPP
 {
     public partial class Form1 : Form
     {
+        
+
+
         public Form1()
         {			        
+            
+
             InitializeComponent();
             /*
              * Section for Clear Labels since winforms is terrible
              * 
              * 
             */
-            label1.Parent = pictureBox1;
-            label1.BackColor = Color.Transparent;
-            label2.Parent = pictureBox1;
-            label2.BackColor = Color.Transparent;
-            Feels_Like.Parent = pictureBox1;
-            Feels_Like.BackColor = Color.Transparent;
-            fCast.Parent = pictureBox1;
-            fCast.BackColor = Color.Transparent;
+            L_zipcode.Parent = pictureBox1;
+            L_zipcode.BackColor = Color.Transparent;
+            L_CITYNAME.Parent = pictureBox1;
+            L_CITYNAME.BackColor = Color.Transparent;
+            L_FEELSLIKE.Parent = pictureBox1;
+            L_FEELSLIKE.BackColor = Color.Transparent;
+            L_Forecast.Parent = pictureBox1;
+            L_Forecast.BackColor = Color.Transparent;
+            L_HUMIDITY.Parent = pictureBox1;
+            L_HUMIDITY.BackColor = Color.Transparent;
+             // End //
+            // Adding BitMap Images
+          
 
+            // End // 
 
 
         }
 
-        private async void button1_ClickAsync(object sender, EventArgs e)
+        private async void FetchWeather_ClickAsync(object sender, EventArgs e)
         {
-
+            // Bitmap Images //
+            Bitmap img1 = Properties.Resources.ClearSkies;
+            Bitmap img2 = Properties.Resources.OverCastClouds;
+            Bitmap SunnyDay = Properties.Resources.Sunny;
+            // End Bitmap Images // 
 
 
             Console.WriteLine("Please enter a zipe code: ");
@@ -51,8 +66,7 @@ namespace WeatherAPP
                 MessageBox.Show("You've entered an incorrect zipcode!", "Error!");
 
             }
-            // Error checking to see if zipcode is valid
-            
+            // Error checking to see if zipcode is valid 
             else
             {
                 var response = await client.GetAsync(request);
@@ -67,21 +81,45 @@ namespace WeatherAPP
                 else
                 {
                     Weather.root inf = JsonConvert.DeserializeObject<Weather.root>(response.Content.ToString());
-                  //  Weather tst = JsonConvert.DeserializeObject<Weather.root>(response.Content.ToString());
+                    //  Weather tst = JsonConvert.DeserializeObject<Weather.root>(response.Content.ToString());
                     //MessageBox.Show(response.Content);
-                    feelsBox.Text = $"{inf.main.temp.ToString()} Degrees!";
-                    cityBox.Text = inf.name;
-                    foreCast.Text = inf.Weather[0].description;
-                    Bitmap img1 = Properties.Resources.ClearSkies;
+                    int FeelsLikeConversion = (int)inf.main.temp;
+                    feelsBox.Text = string.Format("{0}\u00B0F", FeelsLikeConversion.ToString());         
+                    T_cityBox.Text = inf.name.ToUpper().ToString();
+                    foreCast.Text = inf.Weather[0].description[0].ToString().ToUpper() + inf.Weather[0].description.Substring(1);
+                    T_HUMIDITY.Text = inf.main.humidity.ToString() + "%";
                    
-                    
-                    if (inf.Weather[0].description == "clear sky")
+
+
+
+                    switch (inf.Weather[0].description)
                     {
-                        pictureBox1.Image = img1;
+                        case "clear sky":
+                            //P_FORECAST.Image = SunnyDay;
+                            pictureBox1.Image = SunnyDay;
+                            break;
+                        case "overcast clouds":
+                            pictureBox1.Image = img2;
+                            break;
+
+                        case "broken clouds":
+                            pictureBox1.Image = img2;
+                            break;
                     }
 
 
-                    
+                    //if (inf.Weather[0].description == "clear sky")
+                    //    pictureBox1.Image = img1;
+                    //else if (inf.Weather[0].description == "overcast clouds")
+                    //    pictureBox1.Image = img2;
+
+
+
+
+
+
+
+
                 }
 
             }
