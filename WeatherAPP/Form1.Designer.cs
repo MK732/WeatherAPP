@@ -32,7 +32,6 @@
             this.FetchWeather = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.L_zipcode = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.L_Feels_Like = new System.Windows.Forms.Label();
             this.L_CITYNAME = new System.Windows.Forms.Label();
             this.T_cityBox = new System.Windows.Forms.TextBox();
@@ -42,14 +41,20 @@
             this.L_FEELSLIKE = new System.Windows.Forms.Label();
             this.L_HUMIDITY = new System.Windows.Forms.Label();
             this.T_HUMIDITY = new System.Windows.Forms.TextBox();
+            this.testlabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // FetchWeather
             // 
-            this.FetchWeather.BackColor = System.Drawing.Color.Gray;
+            this.FetchWeather.BackColor = System.Drawing.Color.Transparent;
+            this.FetchWeather.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FetchWeather.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.FetchWeather.FlatAppearance.BorderSize = 0;
+            this.FetchWeather.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.FetchWeather.Image = global::WeatherAPP.Properties.Resources.GreenButton;
-            this.FetchWeather.Location = new System.Drawing.Point(230, 390);
+            this.FetchWeather.Location = new System.Drawing.Point(233, 387);
             this.FetchWeather.Name = "FetchWeather";
             this.FetchWeather.Size = new System.Drawing.Size(310, 60);
             this.FetchWeather.TabIndex = 0;
@@ -77,18 +82,6 @@
             this.L_zipcode.TabIndex = 2;
             this.L_zipcode.Text = "Enter Zipcode:";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 450);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
             // L_Feels_Like
             // 
             this.L_Feels_Like.AutoSize = true;
@@ -115,6 +108,7 @@
             this.T_cityBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.T_cityBox.Location = new System.Drawing.Point(380, 90);
             this.T_cityBox.Name = "T_cityBox";
+            this.T_cityBox.ReadOnly = true;
             this.T_cityBox.Size = new System.Drawing.Size(124, 19);
             this.T_cityBox.TabIndex = 6;
             // 
@@ -125,6 +119,7 @@
             this.feelsBox.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.feelsBox.Location = new System.Drawing.Point(380, 171);
             this.feelsBox.Name = "feelsBox";
+            this.feelsBox.ReadOnly = true;
             this.feelsBox.Size = new System.Drawing.Size(124, 19);
             this.feelsBox.TabIndex = 7;
             // 
@@ -144,6 +139,7 @@
             this.foreCast.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.foreCast.Location = new System.Drawing.Point(380, 132);
             this.foreCast.Name = "foreCast";
+            this.foreCast.ReadOnly = true;
             this.foreCast.Size = new System.Drawing.Size(124, 19);
             this.foreCast.TabIndex = 9;
             // 
@@ -173,8 +169,30 @@
             this.T_HUMIDITY.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.T_HUMIDITY.Location = new System.Drawing.Point(380, 215);
             this.T_HUMIDITY.Name = "T_HUMIDITY";
+            this.T_HUMIDITY.ReadOnly = true;
             this.T_HUMIDITY.Size = new System.Drawing.Size(124, 19);
             this.T_HUMIDITY.TabIndex = 12;
+            // 
+            // testlabel
+            // 
+            this.testlabel.AutoSize = true;
+            this.testlabel.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.testlabel.Location = new System.Drawing.Point(378, 248);
+            this.testlabel.Name = "testlabel";
+            this.testlabel.Size = new System.Drawing.Size(0, 22);
+            this.testlabel.TabIndex = 13;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(800, 450);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -182,6 +200,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.testlabel);
             this.Controls.Add(this.T_HUMIDITY);
             this.Controls.Add(this.L_HUMIDITY);
             this.Controls.Add(this.L_FEELSLIKE);
@@ -195,7 +214,9 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.FetchWeather);
             this.Controls.Add(this.pictureBox1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -212,7 +233,6 @@
         private Button FetchWeather;
         private TextBox textBox1;
         private Label L_zipcode;
-        private PictureBox pictureBox1;
         private Label L_Feels_Like;
         private Label L_CITYNAME;
         private TextBox T_cityBox;
@@ -222,5 +242,7 @@
         private Label L_FEELSLIKE;
         private Label L_HUMIDITY;
         private TextBox T_HUMIDITY;
+        private Label testlabel;
+        private PictureBox pictureBox1;
     }
 }

@@ -30,6 +30,9 @@ namespace WeatherAPP
             L_Forecast.BackColor = Color.Transparent;
             L_HUMIDITY.Parent = pictureBox1;
             L_HUMIDITY.BackColor = Color.Transparent;
+            
+            //testlabel.Parent = pictureBox1;  INVISIBLE testing lost it lol.
+            //testlabel.BackColor = Color.Transparent;
              // End //
             // Adding BitMap Images
           
@@ -92,6 +95,7 @@ namespace WeatherAPP
 
 
 
+
                     switch (inf.Weather[0].description)
                     {
                         case "clear sky":
@@ -145,6 +149,11 @@ namespace WeatherAPP
         {
             
         
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
