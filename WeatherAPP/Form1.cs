@@ -55,7 +55,7 @@ namespace WeatherAPP
             string address = textBox1.Text;
             
 
-            string API_KEY = "25cbe3a84ded6fe6ba107e9ed503ed6d";
+            string API_KEY = "NULL";
             string BASE_URL = "http://api.openweathermap.org/data/2.5/weather";
             string MAIN_URL = $"{BASE_URL}?zip={address}&units=imperial&lang=en&appid={API_KEY}";
             string ZIPPO_BASE = "http://api.zippopotam.us/us/";
